@@ -8,9 +8,8 @@ import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
 import WriteReview from "../components/cardIcons/writeReview";
 
 const FavoriteMoviesPage = () => {
-  const {favorites: movieIds } = useContext(MoviesContext);
+  const { favorites: movieIds } = useContext(MoviesContext);
 
-  // Create an array of queries and run in parallel.
   const favoriteMovieQueries = useQueries(
     movieIds.map((movieId) => {
       return {
@@ -19,32 +18,33 @@ const FavoriteMoviesPage = () => {
       };
     })
   );
-  // Check if any of the parallel queries is still loading.
+
   const isLoading = favoriteMovieQueries.find((m) => m.isLoading === true);
+  const isError = favoriteMovieQueries.some((q) => q.isError === true);
 
   if (isLoading) {
     return <Spinner />;
   }
 
-  const movies = favoriteMovieQueries.map((q) => {
-    q.data.genre_ids = q.data.genres.map(g => g.id)
-    return q.data
-  });
+  if (isError) {
+    return <p>An error occurred while fetching favorite movies.</p>;
+  }
 
-  const toDo = () => true;
+  const movies = favoriteMovieQueries.map((q) => {
+    q.data.genre_ids = q.data.genres.map(g => g.id);
+    return q.data;
+  });
 
   return (
     <PageTemplate
       title="Favorite Movies"
       movies={movies}
-      action={(movie) => {
-        return (
-          <>
-            <RemoveFromFavorites movie={movie} />
-            <WriteReview movie={movie} />
-          </>
-        );
-      }}
+      action={(movie) => (
+        <>
+          <RemoveFromFavorites movie={movie} />
+          <WriteReview movie={movie} />
+        </>
+      )}
     />
   );
 };

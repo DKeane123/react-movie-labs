@@ -4,6 +4,7 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
+import WriteReview from "../components/cardIcons/writeReview";
 
 const HomePage = (props) => {
 
@@ -28,7 +29,12 @@ const HomePage = (props) => {
             title="Discover Movies"
             movies={movies}
             action={(movie) => {
-                return <AddToFavoritesIcon movie={movie} />
+                return (
+                <>
+                 <AddToFavoritesIcon movie={movie} />
+                 <WriteReview movie={movie} />
+                 </>
+                );
             }}
         />
     );

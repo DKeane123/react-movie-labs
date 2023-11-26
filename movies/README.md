@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Assignment 1 - ReactJS app.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Name: Daniel Keane
 
-## Available Scripts
+## Overview.
 
-In the project directory, you can run:
+This assignment is an extension of the movies web app that was created in the labs with new pages and features.
 
-### `npm start`
+### Features.
+ 
++ Updated Movie Detail Page to include similar movies and link to tmdb page for the movies cast 
++ Added new actors page that allows for filtering by name of actor, selecting actor cards which shows actor details, cards that show what movies the actor has been in, and a link to that actors tmdb page
++ Added new top rated page to show the best rated movies ever released
++ Added new now playing page that shows what movies are currently playing in cinemas
++ Added new trending page that shows what is currently trending
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup requirements.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+No additional setup on clone required
 
-### `npm test`
+## API endpoints.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
++ List of favorited movies - /movies/favorites
++ List of top rated movies - /movies/toprated
++ List of movies currently playing in cinema - /movies/nowplaying
++ List of movies that are currently trending - /movies/trending
++ List of movie actors (not related to a specific movie) - /movies/actors
++ Page for a chosen review of a movie - /reviews/:id
++ Page for a chosen movie - /movies/:id
++ Page for a list of movies that are similar to the chosen movie - /movies/:id/similar
++ Page for a chosen actor - /actors/:id
++ Home page of the site that shows the discover movies page - /
++ Page for the leave review form - /reviews/form
 
-### `npm run build`
+## Routing.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
++ List of favorited movies - /movies/favorites
++ List of top rated movies - /movies/toprated
++ List of movies currently playing in cinema - /movies/nowplaying
++ List of movies that are currently trending - /movies/trending
++ List of movie actors (not related to a specific movie) - /movies/actors
++ Page for a chosen review of a movie - /reviews/:id
++ Page for a chosen movie - /movies/:id
++ Page for a list of movies that are similar to the chosen movie - /movies/:id/similar
++ Page for a chosen actor - /actors/:id
++ Home page of the site that shows the discover movies page - /
++ Page for the leave review form - /reviews/form

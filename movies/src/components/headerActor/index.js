@@ -4,11 +4,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
+import MovieIcon from "@mui/icons-material/Movie";
 
-const MovieHeader = (props) => {
-  const movie = props.movie;
+const MovieActorHeader = (actors) => {
   const navigate = useNavigate();
 
   return (
@@ -27,12 +26,11 @@ const MovieHeader = (props) => {
       </IconButton>
 
       <Typography variant="h4" component="h3">
-        {movie.title}
-        <a href={movie.homepage}>
-          <HomeIcon color="primary" />
-        </a>
+        {actors.name}
         <br />
-        <span sx={{ fontSize: "1.5rem" }}>{`   "${movie.tagline}"`} </span>
+        <a href={`https://www.imdb.com/name/${actors.imdb_id}`}>
+          <MovieIcon color="primary" />
+        </a>
       </Typography>
 
       <IconButton aria-label="go forward" onClick={() => navigate(+1)} >
@@ -42,4 +40,4 @@ const MovieHeader = (props) => {
   );
 };
 
-export default MovieHeader;
+export default MovieActorHeader;

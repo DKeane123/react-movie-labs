@@ -9,6 +9,8 @@ import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const root = {
     display: "flex",
@@ -74,7 +76,18 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
+      <Link to={`/movies/${movie.id}/similar`} style={{ textDecoration: 'none' }}>
+      <Button variant="contained" color="primary" style={{ marginTop: '16px' }}>
+        View Similar Movies
+      </Button>
+    </Link>
+    <Link to={`https://www.themoviedb.org/movie/${movie.id}/cast`} style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+      <Button variant="contained" color="primary" style={{ marginTop: '16px',marginLeft: '16px' }}>
+        View Full Cast List
+      </Button>
+    </Link>
       </>
+      
   );
 };
 export default MovieDetails ;
